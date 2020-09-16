@@ -1,0 +1,35 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+ 
+<div class="container" style="padding-top: 3%;">
+    <form action="/bot_search/" method="GET">
+      <div class="form-group">
+        <label for="exampleInputEmail1" style="font-size: 2.5ch; padding-bottom: 1%;">What's Your Query</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Query" name="query">
+      </div>
+      <button type="submit" class="btn btn-outline-danger">Search</button>
+    </form>
+
+
+    {% if ans %}
+
+    <h4 style="color: darkgray; padding-top: 2%;">Search Result for {{query}} :</h4>
+    <h4 style="padding-top: 2%;">{{ans}}</h4>
+
+    {% endif %}
+    </div>  
+    
+<br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Simply Your Todos. Woo!</h1>
+            <p>Life is fun. But life is also busy. There's a million different things you could be doing. But what matters is <u>what</u> you do. We created <b><i>Todo Woo</i></b> to help you make sense of all of your opportunities and live that life that matters most to you. Your new organized life awaits.</p>
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Start</a>
+        </div>
+    </div>
+
+{% endblock %}
